@@ -9,10 +9,12 @@ import { MdInputModule } from '@angular2-material/input';
 
 import { AppComponent }  from './app.component';
 import { HomeComponent }  from './home';
+import { FeatureComponent }  from './feature';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'feature/:slug', component: FeatureComponent },
 ];
 const appRoutingProviders: any[] = [];
 const routing = RouterModule.forRoot(appRoutes);

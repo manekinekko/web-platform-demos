@@ -1,6 +1,23 @@
-<h1>
-  Web Platform Awesome Demos!!!
-</h1>
-<p>
-  coming soon...
-</p>
+<section class="flex-column">
+
+  <md-card *ngFor="let feature of features" [ngClass]="{ 'active': feature.enable }">
+   <md-card-header>
+      <img md-card-avatar src="{{ feature.logo }}">
+      <md-card-title><a target="_blank" href="{{ feature.url }}">{{ feature.name }}</a></md-card-title>
+   </md-card-header>
+   <md-card-content>
+      <p>{{ feature.description }}</p>
+   </md-card-content>
+   <md-card-actions>
+      <a *ngIf="feature.enable" [routerLink]="['/feature', feature.slug]" md-button>Launch Demo</a>
+      <i md-button *ngIf="!feature.enable">Demo coming soon</i>
+   </md-card-actions>
+</md-card>
+
+<md-card class="active">
+ <md-card-content>
+    <p>More to come...</p>
+ </md-card-content>
+</md-card>
+
+</section>

@@ -1,0 +1,9 @@
+.flex-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+md-card {
+  width: 300px;
+}
