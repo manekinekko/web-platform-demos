@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['web-platform-demos.component.css']
 })
 export class WebPlatformDemosAppComponent {
-  title = 'web-platform-demos works!';
+  title = 'Web Platform Awesome Demos (coming soon)';
 }
