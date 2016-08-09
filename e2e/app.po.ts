@@ -4,6 +4,6 @@ export class WebPlatformDemosPage {
   }
 
   getParagraphText() {
-    return element(by.css('web-platform-demos-app h1')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }
