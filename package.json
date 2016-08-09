@@ -2,6 +2,9 @@
   "name": "web-platform-demos",
   "version": "0.0.0",
   "license": "MIT",
+  "authors": [
+    "Wassim Chegham <github@wassimchegham.com>"
+  ],
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
