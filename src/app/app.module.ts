@@ -1,39 +1,52 @@
+// CORE DEPS
 import { NgModule } from '@angular/core';
+import { enableProdMode } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdToolbarModule } from '@angular2-material/toolbar/toolbar';
-import { MdCardModule } from '@angular2-material/card';
+
+// MATERIAL DESIGN MODULES
+import { MdIconRegistry } from '@angular2-material/icon/icon-registry';
+import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdInputModule } from '@angular2-material/input';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdIconModule } from '@angular2-material/icon';
+import { MdCheckboxModule } from '@angular2-material/checkbox';
+import { MdCardModule } from '@angular2-material/card';
+import { MdListModule } from '@angular2-material/list';
 
-import { AppComponent }  from './app.component';
-import { HomeComponent }  from './home';
-import { FeatureComponent }  from './feature';
-
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'feature/:slug', component: FeatureComponent },
+export let MD_MODULES: any = [
+  MdToolbarModule,
+  MdInputModule,
+  MdButtonModule,
+  MdIconModule,
+  MdCheckboxModule,
+  MdCardModule,
+  MdListModule
 ];
+
+// ROUTES + APP
+import { ROUTES } from './app.routes';
+import { AppComponent }  from './app.component';
+import { HomeComponent }  from './+home/';
+import { FeatureComponent }  from './+feature/';
+
 const appRoutingProviders: any[] = [];
-const routing = RouterModule.forRoot(appRoutes);
+const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
 
 @NgModule({
   imports: [
     BrowserModule,
-    // Router
-    routing,
-    // Forms
-    FormsModule,
-    // Material Design
-    MdButtonModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdInputModule
+    Routing,
+    ReactiveFormsModule,
+    ...MD_MODULES
   ],
-  declarations: [ HomeComponent ],
-  bootstrap:    [ AppComponent ],
-  providers: [ appRoutingProviders ]
+  declarations: [
+    HomeComponent,
+    AppComponent,
+  ],
+  providers: [ appRoutingProviders ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

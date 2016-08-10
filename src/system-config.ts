@@ -18,11 +18,8 @@ const packages: any = {
 
 // put the names of any of your Material components here
 const materialPkgs:string[] = [
-  'core',
-  'button',
-  'card',
-  'input',
-  'toolbar',
+  'core', 'toolbar', 'button', 'card', 'checkbox', 'icon', 'input', 'list', 'progress-bar',
+  'progress-circle', 'radio', 'sidenav'
 ];
 
 materialPkgs.forEach((pkg) => {
@@ -51,8 +48,8 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/app',
-  'app/home',
-  'app/feature',
+  'app/+home',
+  'app/+feature',
   /** @cli-barrel */
 ];
 
