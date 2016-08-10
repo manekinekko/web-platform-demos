@@ -12,8 +12,29 @@ md-toolbar + section {
   padding: 10px;
 }
 
+img.rotate {
+  transform-origin: center center;
+}
+img.rotate:hover {
+  animation: rotate 1s linear infinite;
+}
+
 md-card {
   margin: 10px;
+}
+
+md-card.demo {
+  padding-top: 80px;
+}
+
+md-card.demo md-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+md-card.demo-content pre {
+  padding: 10px;
 }
 
 md-card:not(.active) {
