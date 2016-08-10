@@ -50,6 +50,8 @@ const barrels: string[] = [
   'app/app',
   'app/+home',
   'app/+feature',
+  'app/api',
+  'app/api/web-bluetooth',
   /** @cli-barrel */
 ];
 

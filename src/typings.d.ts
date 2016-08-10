@@ -4,3 +4,10 @@
 
 /// <reference path="../typings/index.d.ts" />
 declare var module: { id: string };
+
+/**
+ * Add the browser API to the Navigator object and make TypeScript happy ^^
+ */
+interface ExtendedNavigator extends Navigator {
+  bluetooth: any;
+}

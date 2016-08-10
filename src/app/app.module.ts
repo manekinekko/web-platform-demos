@@ -31,6 +31,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent }  from './app.component';
 import { HomeComponent }  from './+home/';
 import { FeatureComponent }  from './+feature/';
+import { WebBluetoothComponent }  from './api/';
 
 const appRoutingProviders: any[] = [];
 const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
@@ -43,6 +44,8 @@ const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
     ...MD_MODULES
   ],
   declarations: [
+    WebBluetoothComponent,
+    FeatureComponent,
     HomeComponent,
     AppComponent,
   ],
