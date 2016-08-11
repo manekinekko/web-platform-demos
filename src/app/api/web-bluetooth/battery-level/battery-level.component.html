@@ -1,0 +1,17 @@
+<md-card class="active demo md-whiteframe-2dp">
+  <md-toolbar class="theme-ble">
+    <img width="50" src="images/ble.png" alt="" />
+    Battery Level
+  </md-toolbar>
+
+  <md-card-content align="center">
+    <div class="battery-level {{ cssClass }}"></div>
+    <span>{{ betteryLevel }}</span>
+  </md-card-content>
+
+  <md-card-actions>
+    <button md-button (click)="chooser()">Get Battery Level</button>
+    <button md-button (click)="simulateNotify()">Test (UI)</button>
+  </md-card-actions>
+
+</md-card>

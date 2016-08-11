@@ -52,6 +52,10 @@ const barrels: string[] = [
   'app/+feature',
   'app/api',
   'app/api/web-bluetooth',
+  'app/api/web-bluetooth/shared',
+  'app/api/web-bluetooth/battery-level/battery-level',
+  'app/api/web-bluetooth/battery-level',
+  'app/api/web-bluetooth/heart-monitor',
   /** @cli-barrel */
 ];
 

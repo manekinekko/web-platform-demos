@@ -1,0 +1,39 @@
+.battery-level {
+  background-image: url(images/battery-level.png);
+  height: 170px;
+  width: 82px;
+  margin: 0 auto;
+  line-height: 160px;
+  text-align: center;
+}
+.battery-level + span {
+  font-size: 2em;
+}
+
+.battery-level.level-unknown {
+  background-position: -743px center;
+}
+.battery-level.level-critical {
+  background-position: -653px center;
+}
+.battery-level.level-20 {
+  background-position: -20px center;
+}
+.battery-level.level-30 {
+  background-position: -108px center;
+}
+.battery-level.level-50 {
+  background-position: -198px center;
+}
+.battery-level.level-60 {
+  background-position: -288px center;
+}
+.battery-level.level-80 {
+  background-position: -379px center;
+}
+.battery-level.level-90 {
+  background-position: -471px center;
+}
+.battery-level.level-100 {
+  background-position: -564px center;
+}

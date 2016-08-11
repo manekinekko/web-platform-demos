@@ -1,16 +1,2 @@
-<md-card class="active demo">
-  <md-toolbar class="theme-ble">
-    <img width="50" src="images/ble.png" alt="" />
-    Web Bluetooth
-  </md-toolbar>
-
-  <md-card-content>
-    <pre>{{ _logs.join('\n') }}</pre>
-  </md-card-content>
-
-  <md-card-actions>
-    <button md-button (click)="chooser()">Get Bluetooth Device's Battery Level</button>
-    <button md-button>Another device (TODO)</button>
-  </md-card-actions>
-
-</md-card>
+<app-battery-level></app-battery-level>
+<app-heart-monitor></app-heart-monitor>

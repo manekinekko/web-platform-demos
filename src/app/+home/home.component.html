@@ -1,6 +1,6 @@
 <section class="flex-column">
 
-  <md-card *ngFor="let feature of features" [ngClass]="{ 'active': feature.enable }">
+  <md-card *ngFor="let feature of features" [ngClass]="{ 'active': feature.enable }" class="md-whiteframe-2dp">
    <md-card-header>
       <img md-card-avatar src="{{ feature.logo }}">
       <md-card-title><a target="_blank" href="{{ feature.url }}">{{ feature.name }}</a></md-card-title>
