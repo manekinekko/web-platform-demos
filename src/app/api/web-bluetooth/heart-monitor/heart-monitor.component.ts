@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { BluetoothService } from '../shared/';
+import { BluetoothCore } from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'app-heart-monitor',
   templateUrl: 'heart-monitor.component.html',
   styleUrls: ['heart-monitor.component.css'],
-  providers: [ BluetoothService ]
+  providers: [ BluetoothCore ]
 })
 export class HeartMonitorComponent implements OnInit {
 
   constructor(
-    private _ble: BluetoothService
+    private _ble: BluetoothCore
   ) { }
 
   ngOnInit() {

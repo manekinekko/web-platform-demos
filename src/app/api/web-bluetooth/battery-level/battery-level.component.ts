@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BluetoothService } from '../shared/';
+import { BluetoothCore } from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'app-battery-level',
   templateUrl: 'battery-level.component.html',
   styleUrls: ['battery-level.component.css'],
-  providers: [ BluetoothService ]
+  providers: [ BluetoothCore ]
 })
 export class BatteryLevelComponent implements OnInit {
 
@@ -24,13 +24,13 @@ export class BatteryLevelComponent implements OnInit {
     cssClass: string = 'level-unknown';
 
     constructor(
-      private _ble: BluetoothService
+      private _ble: BluetoothCore
     ) {}
 
     ngOnInit() {
 
       /**
-       * Subscribe to the bluetooth service in order to receive the response
+       * Subscribe to the bluetooth core service in order to receive the response
        */
       this._ble.subscribe(
 

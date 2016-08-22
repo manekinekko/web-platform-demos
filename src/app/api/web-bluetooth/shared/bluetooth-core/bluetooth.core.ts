@@ -6,7 +6,7 @@ import 'rxjs/add/observable/fromPromise';
 const kBufferSize = 1;
 
 @Injectable()
-export class BluetoothService extends ReplaySubject<any /* find a better interface type */> {
+export class BluetoothCore extends ReplaySubject<any /* find a better interface type */> {
 
   /**
    * An internal property of type <ExtendedNavigator>

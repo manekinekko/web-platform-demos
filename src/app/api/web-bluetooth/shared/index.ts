@@ -1,1 +1,1 @@
-export * from './bluetooth-service/bluetooth.service';
+export * from './bluetooth-core/bluetooth.core';
