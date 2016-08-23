@@ -14,7 +14,7 @@ export class BatteryLevelComponent implements OnInit {
      * This value contains the level of the device's battery. It is used in the view. It
      * @type {string}
      */
-    betteryLevel: string = 'N/A';
+    batteryLevel: string = 'N/A';
 
     /**
      * This value contains the Css class representing the state of the battery level.
@@ -34,9 +34,22 @@ export class BatteryLevelComponent implements OnInit {
        */
       this._ble.subscribe(
 
-        (value) => {
-          this.betteryLevel = `${value} %`;
-          this.cssClass = this._mapBatteryLevelToCssClass(value);
+        (data) => {
+          switch (data.type) {
+
+            case 'BluetoothDevice':
+              this._ble.connectDevice();
+              break;
+
+            case 'BluetoothRemoteGATTServer':
+              this._ble.getBatteryLevel();
+              break;
+
+            case 'Number':
+              this.batteryLevel = `${data.value} %`;
+              this.cssClass = this._mapBatteryLevelToCssClass(data.value);
+              break;
+          }
         },
         (error) => console.error(error),
         () => console.log('done')
@@ -49,10 +62,10 @@ export class BatteryLevelComponent implements OnInit {
     }
 
     /**
-     * Launch the browser chooser dialog. You should have subscribed to this service
+     * Launch the browser chooser dialog and get battery level. You should have subscribed to this service
      * in order to be notified about the response.
      */
-    chooser() {
+    getBatteryLevel() {
       this._ble.discover({
 
         filters: [{
