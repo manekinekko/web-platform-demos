@@ -27,20 +27,17 @@ export let MD_MODULES: any = [
 ];
 
 // ROUTES + APP
-import { ROUTES } from './app.routes';
 import { AppComponent }  from './app.component';
+import { AppRouterModule }  from './app.routes';
 import { HomeComponent }  from './+home/';
 import { FeatureComponent }  from './+feature/';
-import { WebBluetoothComponent }  from './api/';
-
-const appRoutingProviders: any[] = [];
-const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
+import { WebBluetoothComponent, BluetoothCore, BrowserWebBluetooth }  from './api/';
 
 @NgModule({
   imports: [
     BrowserModule,
-    Routing,
     ReactiveFormsModule,
+    AppRouterModule,
     ...MD_MODULES
   ],
   declarations: [
@@ -49,7 +46,10 @@ const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
     HomeComponent,
     AppComponent,
   ],
-  providers: [ appRoutingProviders ],
+  providers: [
+    BluetoothCore,
+    BrowserWebBluetooth
+   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

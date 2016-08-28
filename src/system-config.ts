@@ -53,6 +53,8 @@ const barrels: string[] = [
   'app/api',
   'app/api/web-bluetooth',
   'app/api/web-bluetooth/shared',
+  'app/api/web-bluetooth/shared/bluetooth-core',
+  'app/api/web-bluetooth/shared/bluetooth-core/platform',
   'app/api/web-bluetooth/battery-level/battery-level',
   'app/api/web-bluetooth/battery-level',
   'app/api/web-bluetooth/heart-monitor',

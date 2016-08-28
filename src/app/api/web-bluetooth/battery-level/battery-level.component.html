@@ -1,17 +1,27 @@
 <md-card class="active demo md-whiteframe-2dp">
   <md-toolbar class="theme-ble">
     <img width="50" src="images/ble.png" alt="" />
-    Battery Level
+    Battery Level&nbsp;
+    <span *ngIf="device?.name">(from "{{ device.name }}")</span>
   </md-toolbar>
 
   <md-card-content align="center">
-    <div class="battery-level {{ cssClass }}"></div>
+    <div class="battery-level level-unknown" [ngClass]="{
+      'level-critical': ( batteryLevel < 10 ),
+      'level-20': ( batteryLevel >= 10 && batteryLevel < 30),
+      'level-30': ( batteryLevel >= 30 && batteryLevel < 50),
+      'level-50': ( batteryLevel >= 50 && batteryLevel < 60),
+      'level-60': ( batteryLevel >= 60 && batteryLevel < 80),
+      'level-80': ( batteryLevel >= 80 && batteryLevel < 90),
+      'level-90': ( batteryLevel >= 90  && batteryLevel < 100),
+      'level-100': ( batteryLevel >= 100)
+    }"></div>
     <span>{{ betteryLevel }}</span>
   </md-card-content>
 
   <md-card-actions>
     <button md-button (click)="getBatteryLevel()">Get Battery Level</button>
-    <button md-button (click)="simulateNotify()">Test (UI)</button>
+    <button md-button (click)="getFakeValue()">Test (UI)</button>
   </md-card-actions>
 
 </md-card>
