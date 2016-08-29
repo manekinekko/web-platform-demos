@@ -11,3 +11,7 @@ declare var module: { id: string };
 interface ExtendedNavigator extends Navigator {
   bluetooth: any;
 }
+
+interface ExtendedWindow extends Window {
+  TextDecoder: any;
+}

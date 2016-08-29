@@ -29,8 +29,8 @@ export class BatteryLevelService {
     return this._core.getDevice$();
   }
 
-  getNotification() {
-    return this._core.getNotification$();
+  streamValues() {
+    return this._core.streamValues$();
   }
 
   /**

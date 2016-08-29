@@ -20,11 +20,11 @@ export class BatteryLevelComponent implements OnInit {
 
     ngOnInit() {
       this.getDeviceStatus();
-      this.enableNotification();
+      this.streamValues();
     }
 
-    enableNotification() {
-      this._batteryLevelService.getNotification().subscribe(this.showBatteryLevel.bind(this));
+    streamValues() {
+      this._batteryLevelService.streamValues().subscribe(this.showBatteryLevel.bind(this));
     }
 
     getDeviceStatus() {

@@ -57,7 +57,7 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
   /**
    * @return {Observable<number>}
    */
-  getNotification$(): Observable<number> {
+  streamValues$(): Observable<number> {
     return this._characteristicValueChanges$
       .distinctUntilChanged();
   }
@@ -80,23 +80,26 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
       .then( (device: BluetoothDevice) => {
 
         // listen for disconnected devices
-        device.ongattserverdisconnected = (event: Event) => {
-
-          // @TODO never called (??)
-
-          let disconnectedDevice: BluetoothDevice = <BluetoothDevice>(<any>event).target;
-          console.log(disconnectedDevice, device);
-
-          if(disconnectedDevice.id === device.id) {
-            this._device$.next(null);
-          }
-
-        }
+        (<any>device).addEventListener('gattserverdisconnected', this.onDeviceDisconnected.bind(this));
 
         this._device$.next(device);
 
         return device;
       });
+  }
+
+  /**
+   * @param  {Event}  event [description]
+   */
+  onDeviceDisconnected(event: Event) {
+
+    // @TODO never called (??)
+
+    let disconnectedDevice: BluetoothDevice = <BluetoothDevice>(<any>event).target;
+    console.log('disconnected device %o', disconnectedDevice);
+
+    this._device$.next(null);
+
   }
 
   /**
@@ -159,20 +162,44 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
       .then( (char: BluetoothGATTCharacteristic) => {
 
         // listen for characteristic value changes
-        char.oncharacteristicvaluechanged = (event) => {
-          let characteristicChanged: BluetoothGATTCharacteristic = <BluetoothGATTCharacteristic>(<any>event).target;
-
-          characteristicChanged.readValue()
-            .then( (value: DataView) => value.getUint8(0))
-            .then( (value: number) => {
-              this._characteristicValueChanges$.next(value);
-            });
-        };
+        (<any>char).addEventListener('characteristicvaluechanged', this.onCharacteristicChanged.bind(this));
 
         return char;
+      })
+      .then( (char: BluetoothGATTCharacteristic) => {
+
+        char.startNotifications().then( _ =>  {
+          return (<any>char).addEventListener('characteristicvaluechanged', this.onCharacteristicNotification.bind(this));
+        });
+
+        return char;
+
       });
 
     return this.toObservable(characteristicPromise);
+  }
+
+
+  /**
+   * @param  {[type]} event [description]
+   */
+  onCharacteristicChanged(event) {
+    let characteristicChanged: BluetoothGATTCharacteristic = <BluetoothGATTCharacteristic>(<any>event).target;
+
+    characteristicChanged.readValue()
+      .then( (value: DataView) => value.getUint8(0) )
+      .then( (value: number) => {
+        this._characteristicValueChanges$.next(value);
+      });
+  }
+
+  /**
+   * @param  {[type]} event [description]
+   */
+  onCharacteristicNotification(event) {
+    var value = event.target.value;
+    var textDecoder = new (<ExtendedWindow>window).TextDecoder(); // Used to convert bytes to UTF-8 string.
+    console.log('Received ' + textDecoder.decode(value));
   }
 
   /**
