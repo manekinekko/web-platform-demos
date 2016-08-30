@@ -1,16 +1,17 @@
 <md-card class="active demo md-whiteframe-2dp">
   <md-toolbar class="theme-ble">
     <img width="50" src="images/ble.png" alt="" />
-    Heart Monitor
+    Heart Monitor&nbsp;
+    <span *ngIf="device?.name">(from "{{ device.name }}")</span>
   </md-toolbar>
 
   <md-card-content align="center">
-
+    {{ heartRate }}
   </md-card-content>
 
   <md-card-actions>
-    <button md-button (click)="chooser()">Get Heart Rate</button>
-    <button md-button (click)="simulateNotify()">Test (UI)</button>
+    <button md-button (click)="getHeartRate()">Get Heart Rate</button>
+    <button md-button (click)="getFakeValue()">Test (UI)</button>
   </md-card-actions>
 
 </md-card>

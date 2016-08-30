@@ -1,42 +1,62 @@
-import { Component, OnInit } from '@angular/core';
-import { BluetoothCore } from '../shared/';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { HeartMonitorService } from './heart-monitor.service';
+import { BluetoothCore } from '../shared';
 
 @Component({
   moduleId: module.id,
   selector: 'app-heart-monitor',
   templateUrl: 'heart-monitor.component.html',
   styleUrls: ['heart-monitor.component.css'],
-  providers: [ BluetoothCore ]
+  providers: [ HeartMonitorService, BluetoothCore ]
 })
 export class HeartMonitorComponent implements OnInit {
 
+  heartRate: string = 'N/A';
+  device: any = {};
+
   constructor(
-    private _ble: BluetoothCore
+    private _zone: NgZone,
+    private _heartMonitorService: HeartMonitorService
   ) { }
 
   ngOnInit() {
-
-    this._ble.subscribe(
-
-      (value) => {
-        console.log(value);
-      },
-      (error) => console.error(error),
-      () => console.log('done')
-
-    );
-
+    this.getDeviceStatus();
+    this.streamValues();
   }
 
-  simulateNotify() {}
+  streamValues() {
+    this._heartMonitorService.streamValues().subscribe(this.showHeartRates.bind(this));
+  }
 
-  chooser() {
-    this._ble.discover({
+  getDeviceStatus() {
+    this._heartMonitorService.getDevice().subscribe(
+      (device) => {
 
-      filters: [{
-        services: ['heart_rate']
-      }]
+        if(device) {
+          this.device = device
+        }
+        else {
+          // device not connected or disconnected
+          this.device = null;
+          this.heartRate = 'N/A';
+        }
+      }
+    );
+  }
 
+  getFakeValue() {
+    this._heartMonitorService.getFakeValue();
+  }
+
+  getHeartRate() {
+    return this._heartMonitorService.getHeartMonitorRate().subscribe(this.showHeartRates.bind(this));
+  }
+
+  showHeartRates(value: number) {
+    // force change detection
+    this._zone.run( () =>  {
+      console.log('Reading heart rate level %d', value);
+      this.heartRate = ''+value;
     });
   }
 
