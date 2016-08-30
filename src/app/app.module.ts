@@ -47,9 +47,13 @@ import { WebBluetoothComponent, BluetoothCore, BrowserWebBluetooth }  from './ap
     AppComponent,
   ],
   providers: [
-    BluetoothCore,
-    BrowserWebBluetooth
-   ],
+    BrowserWebBluetooth,
+    // {
+    //   provide: BluetoothCore, useFactory: (dep) => {
+    //     return new BluetoothCore(dep);
+    //   }, deps: [BrowserWebBluetooth]
+    // }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

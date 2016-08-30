@@ -1,12 +1,13 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { BatteryLevelService } from './battery-level.service';
+import { BluetoothCore } from '../shared';
 
 @Component({
   moduleId: module.id,
   selector: 'app-battery-level',
   templateUrl: 'battery-level.component.html',
   styleUrls: ['battery-level.component.css'],
-  providers: [ BatteryLevelService ]
+  providers: [ BatteryLevelService, BluetoothCore ]
 })
 export class BatteryLevelComponent implements OnInit {
 
@@ -57,7 +58,7 @@ export class BatteryLevelComponent implements OnInit {
       this._zone.run( () =>  {
         console.log('Reading battery level %d', value);
         this.batteryLevel = ''+value;
-      })
+      });
     }
 
   }
