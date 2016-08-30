@@ -12,7 +12,7 @@ import {
 export class BatteryLevelService {
 
   static GATT_CHARACTERISTIC_BATTERY_LEVEL = 'battery_level';
-  static GATT_SERVICE_BATTERY = 'battery_service';
+  static GATT_PRIMARY_SERVICE = 'battery_service';
 
   constructor(
     private _core: BluetoothCore
@@ -47,10 +47,10 @@ export class BatteryLevelService {
 
         .discover$({
           filters: [{
-            services: [BatteryLevelService.GATT_SERVICE_BATTERY]
+            services: [BatteryLevelService.GATT_PRIMARY_SERVICE]
           }]
         })
-        .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, BatteryLevelService.GATT_SERVICE_BATTERY) )
+        .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, BatteryLevelService.GATT_PRIMARY_SERVICE) )
         .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, BatteryLevelService.GATT_CHARACTERISTIC_BATTERY_LEVEL) )
         .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
         .map( (value: DataView, index: number) => value.getUint8(0) )
