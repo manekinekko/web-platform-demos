@@ -6,11 +6,18 @@
   </md-toolbar>
 
   <md-card-content align="center">
-    {{ heartRate }}
+    <section>
+      {{ heartRate }}
+    </section>
+    <section>
+      {{ bodySensor }}
+    </section>
+    <section></section>
   </md-card-content>
 
   <md-card-actions>
     <button md-button (click)="getHeartRate()">Get Heart Rate</button>
+    <button md-button (click)="getBodySensorLocation()">Get Body Sensor</button>
     <button md-button (click)="getFakeValue()">Test (UI)</button>
   </md-card-actions>
 

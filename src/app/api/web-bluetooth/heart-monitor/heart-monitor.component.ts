@@ -12,6 +12,7 @@ import { BluetoothCore } from '../shared';
 export class HeartMonitorComponent implements OnInit {
 
   heartRate: string = 'N/A';
+  bodySensor: string = 'N/A';
   device: any = {};
 
   constructor(
@@ -48,8 +49,20 @@ export class HeartMonitorComponent implements OnInit {
     this._heartMonitorService.getFakeValue();
   }
 
+  getBodySensorLocation() {
+    return this._heartMonitorService.getBodySensorLocation()
+      .subscribe(
+        (value) => this.bodySensor = value,
+        (error) => console.trace(error)
+      );
+  }
+
   getHeartRate() {
-    return this._heartMonitorService.getHeartMonitorRate().subscribe(this.showHeartRates.bind(this));
+    return this._heartMonitorService.getHeartMonitorRate()
+      .subscribe(
+        (value) => this.heartRate = value,
+        (error) => console.trace(error)
+      );
   }
 
   showHeartRates(value: number) {

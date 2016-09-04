@@ -30,7 +30,8 @@ export class BatteryLevelService {
   }
 
   streamValues() {
-    return this._core.streamValues$();
+    return this._core.streamValues$()
+      .map( (value: DataView) => value.getUint8(0) );
   }
 
   /**
@@ -53,7 +54,7 @@ export class BatteryLevelService {
         .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, BatteryLevelService.GATT_PRIMARY_SERVICE) )
         .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, BatteryLevelService.GATT_CHARACTERISTIC_BATTERY_LEVEL) )
         .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
-        .map( (value: DataView, index: number) => value.getUint8(0) )
+        .map( (value: DataView) => value.getUint8(0) )
 
   }
 

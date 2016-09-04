@@ -11,7 +11,15 @@ export interface BluetoothCharacteristicUUID {
 }
 
 export interface BluetoothCharacteristicProperties {
-
+  authenticatedSignedWrites: boolean;
+  broadcast: boolean;
+  indicate: boolean;
+  notify: boolean;
+  read: boolean;
+  reliableWrite: boolean;
+  writableAuxiliaries: boolean;
+  write: boolean;
+  writeWithoutResponse: boolean;
 }
 
 export interface BluetoothDescriptorUUID {
