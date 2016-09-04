@@ -1,0 +1,12 @@
+<api-card logo="images/ble.png" theme="theme-ble" [device]="device">
+
+  <header>Luxometer</header>
+
+  <section>
+    {{ light }}
+  </section>
+
+  <button md-button (click)="getLightLevel()">Get Light Level</button>
+  <button md-button *ngIf="device?.name" (click)="getFakeValue()">Test (UI)</button>
+  
+</api-card>

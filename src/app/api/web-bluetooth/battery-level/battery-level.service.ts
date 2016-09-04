@@ -20,9 +20,7 @@ export class BatteryLevelService {
   }
 
   getFakeValue() {
-    this._core.fakeNext(
-      () => (Math.random()*110)|0
-    )
+    this._core.fakeNext();
   }
 
   getDevice() {
@@ -31,7 +29,9 @@ export class BatteryLevelService {
 
   streamValues() {
     return this._core.streamValues$()
-      .map( (value: DataView) => value.getUint8(0) );
+      .map( (value: DataView) => {
+        return value.getUint8(0);
+      });
   }
 
   /**

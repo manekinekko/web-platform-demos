@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BatteryLevelComponent } from './battery-level/';
 import { HeartMonitorComponent } from './heart-monitor/';
+import { LuxometerComponent } from './luxometer/';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,8 @@ import { HeartMonitorComponent } from './heart-monitor/';
   styleUrls: ['web-bluetooth.component.css'],
   directives: [
     BatteryLevelComponent,
-    HeartMonitorComponent
+    HeartMonitorComponent,
+    LuxometerComponent
  ]
 })
 export class WebBluetoothComponent implements OnInit {

@@ -63,16 +63,35 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
       .distinctUntilChanged();
   }
 
+
+  anyDeviceFilter() {
+    // This is the closest we can get for now to get all devices.
+    // https://github.com/WebBluetoothCG/web-bluetooth/issues/234
+
+    let filters: {name?: string; namePrefix?: string}[] = [];
+
+    filters = Array
+      .from('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+      .map(c => ({namePrefix: c}));
+    filters.push({name: ''});
+
+    return filters;
+  }
+
   /**
    * Run the discovery process.
    *
    * @param  {RequestDeviceOptions} Options such as filters and optional services
    * @return {Promise<number>} Emites the value of the requested service read from the device
    */
-  discover(options: RequestDeviceOptions) {
+  discover(options?: RequestDeviceOptions) {
+
+    options = options || {
+      filters: this.anyDeviceFilter(),
+      optionalServices: ['generic_access']
+    };
     console.log('[BLE::Info] Requesting devices with options %o', options);
 
-    /** @TODO handl user cancel */
     return this._webBle.requestDevice(options)
       .then( (device: BluetoothDevice) => {
 
@@ -91,6 +110,7 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
 
       })
       .catch( (e) => console.trace('[BLE::Error] discover: %o', e) );
+      /** @TODO handl user cancel */
   }
 
   /**
@@ -113,7 +133,7 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
    * @param  {RequestDeviceOptions} Options such as filters and optional services
    * @return {Observable<number>} Emites the value of the requested service read from the device
    */
-  discover$(options: RequestDeviceOptions) {
+  discover$(options?: RequestDeviceOptions) {
     return this.toObservable(
       this.discover(options)
         .catch( (e) => console.trace('[BLE::Error] discover$: %o', e) )
@@ -253,7 +273,16 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
    * Sends random data (for testing purpose only).
    * @return {Observable<number>}
    */
-  fakeNext(fakeValue: Function) {
+  fakeNext(fakeValue?: Function) {
+
+    if(fakeValue === undefined) {
+      fakeValue = () => {
+        let dv = new DataView(new ArrayBuffer(8));
+        dv.setUint8(0, (Math.random()*110)|0);
+        return dv;
+      }
+    }
+
     this._characteristicValueChanges$.next( fakeValue() );
   }
 

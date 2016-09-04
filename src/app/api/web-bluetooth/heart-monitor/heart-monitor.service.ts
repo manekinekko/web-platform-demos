@@ -23,9 +23,7 @@ export class HeartMonitorService {
   }
 
   getFakeValue() {
-    this._core.fakeNext(
-      () => (Math.random()*110)|0
-    )
+    this._core.fakeNext();
   }
 
   getDevice() {
