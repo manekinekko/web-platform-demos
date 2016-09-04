@@ -1,0 +1,18 @@
+<md-card class="active demo md-whiteframe-2dp">
+
+  <md-toolbar class="{{ theme }}">
+    <img width="50" src="{{ src }}" alt="" />
+    <ng-content select="header"></ng-content>&nbsp;
+    <span *ngIf="device?.name">(from "{{ device.name }}")</span>
+  </md-toolbar>
+
+  <md-card-content align="center">
+    <ng-content select="section"></ng-content>
+    <section *ngIf="device?.name"></section>
+  </md-card-content>
+
+  <md-card-actions>
+    <ng-content select="button"></ng-content>    
+  </md-card-actions>
+
+</md-card>

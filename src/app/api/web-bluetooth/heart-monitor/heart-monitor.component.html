@@ -1,24 +1,16 @@
-<md-card class="active demo md-whiteframe-2dp">
-  <md-toolbar class="theme-ble">
-    <img width="50" src="images/ble.png" alt="" />
-    Heart Monitor&nbsp;
-    <span *ngIf="device?.name">(from "{{ device.name }}")</span>
-  </md-toolbar>
+<api-card logo="images/ble.png" theme="theme-ble" [device]="device">
 
-  <md-card-content align="center">
-    <section>
-      {{ heartRate }}
-    </section>
-    <section>
-      {{ bodySensor }}
-    </section>
-    <section></section>
-  </md-card-content>
+  <header>Heart Monitor</header>
 
-  <md-card-actions>
-    <button md-button (click)="getHeartRate()">Get Heart Rate</button>
-    <button md-button (click)="getBodySensorLocation()">Get Body Sensor</button>
-    <button md-button (click)="getFakeValue()">Test (UI)</button>
-  </md-card-actions>
+  <section>
+    <span [innerHTML]="heartRate | heart" ></span>
+  </section>
+  <section>
+    {{ bodySensor }}
+  </section>
 
-</md-card>
+  <button md-button (click)="getHeartRate()">Get Heart Rate</button>
+  <button md-button (click)="getBodySensorLocation()">Get Body Sensor</button>
+  <button md-button *ngIf="device?.name" (click)="getFakeValue()">Test (UI)</button>
+
+</api-card>

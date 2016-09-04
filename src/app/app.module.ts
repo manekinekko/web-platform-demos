@@ -31,6 +31,7 @@ import { AppComponent }  from './app.component';
 import { AppRouterModule }  from './app.routes';
 import { HomeComponent }  from './+home/';
 import { FeatureComponent }  from './+feature/';
+import { ApiCardComponent }  from './shared/';
 import { WebBluetoothComponent, BluetoothCore, BrowserWebBluetooth }  from './api/';
 
 @NgModule({
@@ -41,18 +42,14 @@ import { WebBluetoothComponent, BluetoothCore, BrowserWebBluetooth }  from './ap
     ...MD_MODULES
   ],
   declarations: [
+    ApiCardComponent,
     WebBluetoothComponent,
     FeatureComponent,
     HomeComponent,
     AppComponent,
   ],
   providers: [
-    BrowserWebBluetooth,
-    // {
-    //   provide: BluetoothCore, useFactory: (dep) => {
-    //     return new BluetoothCore(dep);
-    //   }, deps: [BrowserWebBluetooth]
-    // }
+    BrowserWebBluetooth
   ],
   bootstrap: [ AppComponent ]
 })

@@ -1,0 +1,4 @@
+:host md-card-content section {
+  display: inline-block;
+  width: 125px;
+}
