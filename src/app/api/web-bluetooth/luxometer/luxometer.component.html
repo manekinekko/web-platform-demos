@@ -3,10 +3,10 @@
   <header>Luxometer</header>
 
   <section>
-    {{ light }}
+    <span [innerHTML]="light | unit:'💡'" ></span>
   </section>
 
   <button md-button (click)="getLightLevel()">Get Light Level</button>
   <button md-button *ngIf="device?.name" (click)="getFakeValue()">Test (UI)</button>
-  
+
 </api-card>

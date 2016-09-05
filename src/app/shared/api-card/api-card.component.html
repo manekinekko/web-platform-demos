@@ -7,12 +7,14 @@
   </md-toolbar>
 
   <md-card-content align="center">
-    <ng-content select="section"></ng-content>
+    <div class="format-value">
+      <ng-content select="section"></ng-content>
+    </div>
     <section *ngIf="device?.name"></section>
   </md-card-content>
 
   <md-card-actions>
-    <ng-content select="button"></ng-content>    
+    <ng-content select="button"></ng-content>
   </md-card-actions>
 
 </md-card>

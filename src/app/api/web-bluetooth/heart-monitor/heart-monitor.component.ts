@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { HeartMonitorService } from './heart-monitor.service';
 import { BluetoothCore } from '../shared';
-import { HeartPipe } from './heart-pipe/heart.pipe';
+import { UnitPipe } from '../shared';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +9,7 @@ import { HeartPipe } from './heart-pipe/heart.pipe';
   templateUrl: 'heart-monitor.component.html',
   styleUrls: ['heart-monitor.component.css'],
   providers: [ HeartMonitorService, BluetoothCore ],
-  pipes: [HeartPipe]
+  pipes: [UnitPipe]
 })
 export class HeartMonitorComponent implements OnInit {
 

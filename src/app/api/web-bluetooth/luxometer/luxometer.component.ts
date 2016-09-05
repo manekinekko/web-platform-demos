@@ -12,8 +12,6 @@ import { BluetoothCore } from '../shared';
 export class LuxometerComponent implements OnInit {
 
   light: string|number = 'N/A';
-  heartRate: string = 'N/A';
-  bodySensor: string = 'N/A';
   device: any = {};
 
   constructor(
