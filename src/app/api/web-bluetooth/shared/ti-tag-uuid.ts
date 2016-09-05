@@ -109,3 +109,6 @@ export const TiTag = {
     CONFIG :                  'f000aa66-0451-4000-b000-000000000000'
   }
 };
+
+
+export const TITAG_SERVICES = Object.keys(TiTag).map( (key) => TiTag[key].SERVICE );

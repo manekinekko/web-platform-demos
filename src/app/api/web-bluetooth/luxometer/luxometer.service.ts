@@ -6,7 +6,8 @@ import {
   BluetoothRemoteGATTService,
   BluetoothRemoteGATTCharacteristic,
   DataView,
-  TiTag
+  TiTag,
+  TITAG_SERVICES
 } from '../shared';
 
 @Injectable()
@@ -40,8 +41,9 @@ export class LightService {
 
        .discover$({
          filters: [{
-           services: [LightService.GATT_PRIMARY_SERVICE]
-         }]
+           name: 'CC2650 SensorTag'
+         }],
+         optionalServices: TITAG_SERVICES
        })
        .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, LightService.GATT_PRIMARY_SERVICE) )
        .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, LightService.GATT_CHARACTERISTIC_LIGHT_LEVEL) )
