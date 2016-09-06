@@ -13,9 +13,6 @@ import {
 @Injectable()
 export class LightService {
 
-  static GATT_PRIMARY_SERVICE = TiTag.LIGHT.SERVICE;
-  static GATT_CHARACTERISTIC_LIGHT_LEVEL = TiTag.LIGHT.DATA;
-
   constructor(
     private _core: BluetoothCore
   ) {
@@ -44,10 +41,35 @@ export class LightService {
            name: 'CC2650 SensorTag'
          }],
          optionalServices: TITAG_SERVICES
+
+        // @TODO add auto-enable config, to enable a sensor, for instance (see below)
+        //  enable: [{
+        //    characteristic: TiTag.LIGHT.CONFIGURATION,
+        //    value: new Uint8Array([1])
+        //  }]
+
        })
-       .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, LightService.GATT_PRIMARY_SERVICE) )
-       .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, LightService.GATT_CHARACTERISTIC_LIGHT_LEVEL) )
+       .flatMap( (gatt: BluetoothRemoteGATTServer)  => {
+
+         // enable sensor in order to collect data
+         let primaryService = this._core.getPrimaryService$(gatt, TiTag.LIGHT.SERVICE);
+
+         primaryService
+          .flatMap( (primaryService) => this._core.getCharacteristic$(primaryService, TiTag.LIGHT.CONFIGURATION))
+          .subscribe( (characteristic: BluetoothRemoteGATTCharacteristic) => this._core.writeValue$(characteristic, new Uint8Array([1])) );
+
+          return primaryService;
+       })
+
+       .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, TiTag.LIGHT.DATA) )
+
+       // @TODO we should provide those helper methods in core:
+       // - readValue_8$(): number
+       // - readValue_16$(): number
+       // - readValue_32$(): number
+       // - readValue_64$(): number
        .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
+
        .map( (value: DataView) => value.getUint8(0) )
 
  }

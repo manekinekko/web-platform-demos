@@ -26,7 +26,11 @@ export class LuxometerComponent implements OnInit {
   streamValues() {
     this._lightService.streamValues()
       .subscribe(
-        (value) => this.light = value
+        (value) => {
+          console.log(value);
+          this.light = value
+        },
+        (error) => console.error(error)
       );
   }
 
@@ -48,7 +52,11 @@ export class LuxometerComponent implements OnInit {
 
   getLightLevel() {
     return this._lightService.getLightLevel().subscribe(
-      value => this.light = value
+      (value) => {
+        console.log(value);
+        this.light = value
+      },
+      (error) => console.error(error)
     );
   }
 
