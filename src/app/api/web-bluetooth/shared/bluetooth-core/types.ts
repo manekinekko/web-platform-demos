@@ -35,7 +35,7 @@ export interface BluetoothDescriptorUUID {
 }
 
 export interface RequestDeviceOptions {
-  filters: Array<any>;
+  filters?: Array<any>;
   optionalServices?: Array<any>;
 }
 
@@ -69,14 +69,14 @@ export interface DataView {
   byteLength: number;
   byteOffset: number;
 
-  getInt8(byteOffset: number): number;
-  getUint8(byteOffset: number): number;
-  getInt16(byteOffset: number): number;
-  getUint16(byteOffset: number): number;
-  getInt32(byteOffset: number): number;
-  getUint32(byteOffset: number): number;
-  getFloat32(byteOffset: number): number;
-  getFloat64(byteOffset: number): number;
+  getInt8(byteOffset: number, littlEndian?: boolean): number;
+  getUint8(byteOffset: number, littlEndian?: boolean): number;
+  getInt16(byteOffset: number, littlEndian?: boolean): number;
+  getUint16(byteOffset: number, littlEndian?: boolean): number;
+  getInt32(byteOffset: number, littlEndian?: boolean): number;
+  getUint32(byteOffset: number, littlEndian?: boolean): number;
+  getFloat32(byteOffset: number, littlEndian?: boolean): number;
+  getFloat64(byteOffset: number, littlEndian?: boolean): number;
 
   setInt8(byteOffset: number, value: number, littlEndian?: boolean): void;
   setUint8(byteOffset: number, value: number, littlEndian?: boolean): void;

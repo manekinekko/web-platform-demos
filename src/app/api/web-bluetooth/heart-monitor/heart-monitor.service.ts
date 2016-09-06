@@ -75,13 +75,9 @@ export class HeartMonitorService {
 
   private _setupGATTConnection(characteristic): Observable<any> {
    return this._core
-
        .discover$({
-         filters: [{
-           services: [HeartMonitorService.GATT_PRIMARY_SERVICE]
-         }]
+         optionalServices: [HeartMonitorService.GATT_PRIMARY_SERVICE]
        })
-
        .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, HeartMonitorService.GATT_PRIMARY_SERVICE) )
        .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, characteristic) );
  }

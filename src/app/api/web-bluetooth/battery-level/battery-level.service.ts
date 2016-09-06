@@ -45,16 +45,13 @@ export class BatteryLevelService {
     console.log('Getting Battery Service...');
 
     return this._core
-
         .discover$({
-          filters: [{
-            services: [BatteryLevelService.GATT_PRIMARY_SERVICE]
-          }]
+          optionalServices: [BatteryLevelService.GATT_PRIMARY_SERVICE]
         })
         .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, BatteryLevelService.GATT_PRIMARY_SERVICE) )
         .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, BatteryLevelService.GATT_CHARACTERISTIC_BATTERY_LEVEL) )
         .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
-        .map( (value: DataView) => value.getUint8(0) )
+        .map( (value: DataView) => value.getUint8(0) );
 
   }
 

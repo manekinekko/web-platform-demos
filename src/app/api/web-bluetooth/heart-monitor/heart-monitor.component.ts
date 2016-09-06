@@ -55,7 +55,7 @@ export class HeartMonitorComponent implements OnInit {
     return this._heartMonitorService.getBodySensorLocation()
       .subscribe(
         (value) => this.bodySensor = value,
-        (error) => console.trace(error)
+        (error) => console.error('[HearRate::Error]', error)
       );
   }
 
@@ -63,7 +63,7 @@ export class HeartMonitorComponent implements OnInit {
     return this._heartMonitorService.getHeartMonitorRate()
       .subscribe(
         (value) => this.heartRate = value,
-        (error) => console.trace(error)
+        (error) => console.error('[HearRate::Error]', error)
       );
   }
 
