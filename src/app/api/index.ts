@@ -1,1 +1,1 @@
-export * from './web-bluetooth/';
+export * from './api.module';

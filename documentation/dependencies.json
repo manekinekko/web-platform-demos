@@ -1,0 +1,1303 @@
+[
+  {
+    "name": "MdModule",
+    "file": "app/core/md.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {}
+    ],
+    "exports": [
+      {}
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 694,
+        "end": 747,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 694,
+          "end": 704,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 705,
+          "end": 747,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 707,
+              "end": 743,
+              "flags": 0,
+              "kind": 191,
+              "expression": {
+                "pos": 715,
+                "end": 743,
+                "flags": 0,
+                "kind": 174,
+                "expression": {
+                  "pos": 715,
+                  "end": 729,
+                  "flags": 0,
+                  "kind": 172,
+                  "expression": {
+                    "pos": 715,
+                    "end": 725,
+                    "flags": 0,
+                    "text": "MD_MODULES"
+                  },
+                  "name": {
+                    "pos": 726,
+                    "end": 729,
+                    "flags": 0,
+                    "text": "map"
+                  }
+                },
+                "arguments": [
+                  {
+                    "pos": 730,
+                    "end": 742,
+                    "flags": 0,
+                    "text": "mapProviders"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "pos": 748,
+        "end": 783,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 748,
+          "end": 758,
+          "flags": 0,
+          "text": "exports"
+        },
+        "initializer": {
+          "pos": 759,
+          "end": 783,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 761,
+              "end": 779,
+              "flags": 0,
+              "kind": 191,
+              "expression": {
+                "pos": 769,
+                "end": 779,
+                "flags": 0,
+                "text": "MD_MODULES"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "CoreModule",
+    "file": "app/core/core.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "undefined*"
+      },
+      {
+        "name": "MdModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "RouterModule"
+      },
+      {
+        "name": "MdModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 278,
+        "end": 357,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 278,
+          "end": 288,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 289,
+          "end": 357,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 291,
+              "end": 309,
+              "flags": 0,
+              "text": "BrowserModule"
+            },
+            {
+              "pos": 310,
+              "end": 339,
+              "flags": 0,
+              "kind": 174,
+              "expression": {
+                "pos": 310,
+                "end": 335,
+                "flags": 0,
+                "kind": 172,
+                "expression": {
+                  "pos": 310,
+                  "end": 327,
+                  "flags": 0,
+                  "text": "RouterModule"
+                },
+                "name": {
+                  "pos": 328,
+                  "end": 335,
+                  "flags": 0,
+                  "text": "forRoot"
+                }
+              },
+              "arguments": []
+            },
+            {
+              "pos": 340,
+              "end": 353,
+              "flags": 0,
+              "text": "MdModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 358,
+        "end": 425,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 358,
+          "end": 368,
+          "flags": 0,
+          "text": "exports"
+        },
+        "initializer": {
+          "pos": 369,
+          "end": 425,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 371,
+              "end": 389,
+              "flags": 0,
+              "text": "BrowserModule"
+            },
+            {
+              "pos": 390,
+              "end": 407,
+              "flags": 0,
+              "text": "RouterModule"
+            },
+            {
+              "pos": 408,
+              "end": 421,
+              "flags": 0,
+              "text": "MdModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "SharedModule",
+    "file": "app/shared/shared.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "HomeComponent",
+        "file": "shared/home/home.component.ts",
+        "selector": "app-home",
+        "providers": [],
+        "templateUrl": [
+          "home.component.html"
+        ],
+        "styleUrls": [
+          "home.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 64,
+            "end": 87,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 64,
+              "end": 75,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 76,
+              "end": 87,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-home"
+            }
+          },
+          {
+            "pos": 88,
+            "end": 125,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 88,
+              "end": 102,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 103,
+              "end": 125,
+              "flags": 0,
+              "kind": 9,
+              "text": "home.component.html"
+            }
+          },
+          {
+            "pos": 126,
+            "end": 162,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 126,
+              "end": 138,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 139,
+              "end": 162,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 141,
+                  "end": 161,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "home.component.css"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ApiCardComponent",
+        "file": "shared/api-card/api-card.component.ts",
+        "selector": "api-card",
+        "providers": [],
+        "templateUrl": [
+          "api-card.component.html"
+        ],
+        "styleUrls": [
+          "api-card.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 71,
+            "end": 94,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 71,
+              "end": 82,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 83,
+              "end": 94,
+              "flags": 0,
+              "kind": 9,
+              "text": "api-card"
+            }
+          },
+          {
+            "pos": 95,
+            "end": 136,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 95,
+              "end": 109,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 110,
+              "end": 136,
+              "flags": 0,
+              "kind": 9,
+              "text": "api-card.component.html"
+            }
+          },
+          {
+            "pos": 137,
+            "end": 177,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 137,
+              "end": 149,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 150,
+              "end": 177,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 152,
+                  "end": 176,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "api-card.component.css"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CoreModule"
+      },
+      {
+        "name": "SharedRoutesModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "ApiCardComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 352,
+        "end": 408,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 352,
+          "end": 362,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 363,
+          "end": 408,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 365,
+              "end": 380,
+              "flags": 0,
+              "text": "CoreModule"
+            },
+            {
+              "pos": 381,
+              "end": 404,
+              "flags": 0,
+              "text": "SharedRoutesModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 409,
+        "end": 471,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 409,
+          "end": 424,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "pos": 425,
+          "end": 471,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 427,
+              "end": 445,
+              "flags": 0,
+              "text": "HomeComponent"
+            },
+            {
+              "pos": 446,
+              "end": 467,
+              "flags": 0,
+              "text": "ApiCardComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 472,
+        "end": 510,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 472,
+          "end": 482,
+          "flags": 0,
+          "text": "exports"
+        },
+        "initializer": {
+          "pos": 483,
+          "end": 510,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 485,
+              "end": 506,
+              "flags": 0,
+              "text": "ApiCardComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "WebBleModule",
+    "file": "api/web-bluetooth/web-bluetooth.module.ts",
+    "providers": [
+      {
+        "name": "BluetoothCore"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "WebBluetoothComponent",
+        "file": "api/web-bluetooth/web-bluetooth.component.ts",
+        "selector": "app-web-bluetooth",
+        "providers": [],
+        "templateUrl": [
+          "web-bluetooth.component.html"
+        ],
+        "styleUrls": [
+          "web-bluetooth.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 64,
+            "end": 96,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 64,
+              "end": 75,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 76,
+              "end": 96,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-web-bluetooth"
+            }
+          },
+          {
+            "pos": 97,
+            "end": 143,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 97,
+              "end": 111,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 112,
+              "end": 143,
+              "flags": 0,
+              "kind": 9,
+              "text": "web-bluetooth.component.html"
+            }
+          },
+          {
+            "pos": 144,
+            "end": 189,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 144,
+              "end": 156,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 157,
+              "end": 189,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 159,
+                  "end": 188,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "web-bluetooth.component.css"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "BatteryLevelComponent",
+        "file": "web-bluetooth/battery-level/battery-level.component.ts",
+        "selector": "app-battery-level",
+        "providers": [
+          {
+            "name": "BatteryLevelService"
+          }
+        ],
+        "templateUrl": [
+          "battery-level.component.html"
+        ],
+        "styleUrls": [
+          "battery-level.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 135,
+            "end": 167,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 135,
+              "end": 146,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 147,
+              "end": 167,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-battery-level"
+            }
+          },
+          {
+            "pos": 168,
+            "end": 214,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 168,
+              "end": 182,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 183,
+              "end": 214,
+              "flags": 0,
+              "kind": 9,
+              "text": "battery-level.component.html"
+            }
+          },
+          {
+            "pos": 215,
+            "end": 260,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 215,
+              "end": 227,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 228,
+              "end": 260,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 230,
+                  "end": 259,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "battery-level.component.css"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 261,
+            "end": 298,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 261,
+              "end": 273,
+              "flags": 0,
+              "text": "providers"
+            },
+            "initializer": {
+              "pos": 274,
+              "end": 298,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 276,
+                  "end": 296,
+                  "flags": 0,
+                  "text": "BatteryLevelService"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "HeartMonitorComponent",
+        "file": "web-bluetooth/heart-monitor/heart-monitor.component.ts",
+        "selector": "app-heart-monitor",
+        "providers": [
+          {
+            "name": "HeartMonitorService"
+          }
+        ],
+        "templateUrl": [
+          "heart-monitor.component.html"
+        ],
+        "styleUrls": [
+          "heart-monitor.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 135,
+            "end": 167,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 135,
+              "end": 146,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 147,
+              "end": 167,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-heart-monitor"
+            }
+          },
+          {
+            "pos": 168,
+            "end": 214,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 168,
+              "end": 182,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 183,
+              "end": 214,
+              "flags": 0,
+              "kind": 9,
+              "text": "heart-monitor.component.html"
+            }
+          },
+          {
+            "pos": 215,
+            "end": 260,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 215,
+              "end": 227,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 228,
+              "end": 260,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 230,
+                  "end": 259,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "heart-monitor.component.css"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 261,
+            "end": 298,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 261,
+              "end": 273,
+              "flags": 0,
+              "text": "providers"
+            },
+            "initializer": {
+              "pos": 274,
+              "end": 298,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 276,
+                  "end": 296,
+                  "flags": 0,
+                  "text": "HeartMonitorService"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "LuxometerComponent",
+        "file": "web-bluetooth/luxometer/luxometer.component.ts",
+        "selector": "app-luxometer",
+        "providers": [
+          {
+            "name": "LightService"
+          }
+        ],
+        "templateUrl": [
+          "luxometer.component.html"
+        ],
+        "styleUrls": [
+          "luxometer.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 116,
+            "end": 144,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 116,
+              "end": 127,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 128,
+              "end": 144,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-luxometer"
+            }
+          },
+          {
+            "pos": 145,
+            "end": 187,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 145,
+              "end": 159,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "pos": 160,
+              "end": 187,
+              "flags": 0,
+              "kind": 9,
+              "text": "luxometer.component.html"
+            }
+          },
+          {
+            "pos": 188,
+            "end": 229,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 188,
+              "end": 200,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "pos": 201,
+              "end": 229,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 203,
+                  "end": 228,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "luxometer.component.css"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 230,
+            "end": 260,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 230,
+              "end": 242,
+              "flags": 0,
+              "text": "providers"
+            },
+            "initializer": {
+              "pos": 243,
+              "end": 260,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 245,
+                  "end": 258,
+                  "flags": 0,
+                  "text": "LightService"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "UnitPipe"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "SharedModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 437,
+        "end": 489,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 437,
+          "end": 447,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 448,
+          "end": 489,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 450,
+              "end": 467,
+              "flags": 0,
+              "text": "CommonModule"
+            },
+            {
+              "pos": 468,
+              "end": 485,
+              "flags": 0,
+              "text": "SharedModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 490,
+        "end": 630,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 490,
+          "end": 505,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "pos": 506,
+          "end": 630,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 508,
+              "end": 534,
+              "flags": 0,
+              "text": "WebBluetoothComponent"
+            },
+            {
+              "pos": 535,
+              "end": 561,
+              "flags": 0,
+              "text": "BatteryLevelComponent"
+            },
+            {
+              "pos": 562,
+              "end": 588,
+              "flags": 0,
+              "text": "HeartMonitorComponent"
+            },
+            {
+              "pos": 589,
+              "end": 612,
+              "flags": 0,
+              "text": "LuxometerComponent"
+            },
+            {
+              "pos": 613,
+              "end": 626,
+              "flags": 0,
+              "text": "UnitPipe"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 631,
+        "end": 668,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 631,
+          "end": 643,
+          "flags": 0,
+          "text": "providers"
+        },
+        "initializer": {
+          "pos": 644,
+          "end": 668,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 646,
+              "end": 664,
+              "flags": 0,
+              "text": "BluetoothCore"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "ApiModule",
+    "file": "app/api/api.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "WebBleModule"
+      },
+      {
+        "name": "ApiRoutesModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "WebBleModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 154,
+        "end": 209,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 154,
+          "end": 164,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 165,
+          "end": 209,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 167,
+              "end": 184,
+              "flags": 0,
+              "text": "WebBleModule"
+            },
+            {
+              "pos": 185,
+              "end": 205,
+              "flags": 0,
+              "text": "ApiRoutesModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 210,
+        "end": 244,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 210,
+          "end": 220,
+          "flags": 0,
+          "text": "exports"
+        },
+        "initializer": {
+          "pos": 221,
+          "end": 244,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 223,
+              "end": 240,
+              "flags": 0,
+              "text": "WebBleModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 64,
+            "end": 87,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 64,
+              "end": 75,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 76,
+              "end": 87,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-root"
+            }
+          },
+          {
+            "pos": 88,
+            "end": 382,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 88,
+              "end": 99,
+              "flags": 0,
+              "text": "template"
+            },
+            "initializer": {
+              "pos": 100,
+              "end": 382,
+              "flags": 0,
+              "kind": 11,
+              "text": "\n  <md-toolbar class=\"bg__pink\">\n    <a [routerLink]=\"['home']\">\n      <img class=\"rotate\" src=\"assets/images/chrome.png\" width=\"40\" height=\"40\"/></a>\n      &nbsp;&nbsp;&nbsp;Web Platform Awesome Demos\n  </md-toolbar>\n  <section>\n    <router-outlet></router-outlet>\n  </section>\n"
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CoreModule"
+      },
+      {
+        "name": "SharedModule"
+      },
+      {
+        "name": "ApiModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 273,
+        "end": 338,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 273,
+          "end": 283,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "pos": 284,
+          "end": 338,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 286,
+              "end": 301,
+              "flags": 0,
+              "text": "CoreModule"
+            },
+            {
+              "pos": 302,
+              "end": 319,
+              "flags": 0,
+              "text": "SharedModule"
+            },
+            {
+              "pos": 320,
+              "end": 334,
+              "flags": 0,
+              "text": "ApiModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 339,
+        "end": 378,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 339,
+          "end": 354,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "pos": 355,
+          "end": 378,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 357,
+              "end": 374,
+              "flags": 0,
+              "text": "AppComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 379,
+        "end": 415,
+        "flags": 0,
+        "kind": 253,
+        "name": {
+          "pos": 379,
+          "end": 391,
+          "flags": 0,
+          "text": "bootstrap"
+        },
+        "initializer": {
+          "pos": 392,
+          "end": 415,
+          "flags": 0,
+          "kind": 170,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 394,
+              "end": 411,
+              "flags": 0,
+              "text": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,1 +1,1 @@
-export * from './api-card';
+export * from './shared.module';

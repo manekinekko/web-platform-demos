@@ -1,15 +1,11 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { HeartMonitorService } from './heart-monitor.service';
-import { BluetoothCore } from '../shared';
-import { UnitPipe } from '../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-heart-monitor',
   templateUrl: 'heart-monitor.component.html',
   styleUrls: ['heart-monitor.component.css'],
-  providers: [ HeartMonitorService, BluetoothCore ],
-  pipes: [UnitPipe]
+  providers: [ HeartMonitorService ]
 })
 export class HeartMonitorComponent implements OnInit {
 

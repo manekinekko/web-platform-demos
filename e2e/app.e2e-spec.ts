@@ -1,10 +1,10 @@
-import { WebPlatformDemosPage } from './app.po';
+import { XxxPage } from './app.po';
 
-describe('web-platform-demos App', function() {
-  let page: WebPlatformDemosPage;
+describe('xxx App', function() {
+  let page: XxxPage;
 
   beforeEach(() => {
-    page = new WebPlatformDemosPage();
+    page = new XxxPage();
   });
 
   it('should display message saying app works', () => {

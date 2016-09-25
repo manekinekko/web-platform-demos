@@ -1,4 +1,6 @@
-export class WebPlatformDemosPage {
+import { browser, element, by } from 'protractor/globals';
+
+export class XxxPage {
   navigateTo() {
     return browser.get('/');
   }

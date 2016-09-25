@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LightService } from './luxometer.service';
-import { BluetoothCore } from '../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-luxometer',
   templateUrl: 'luxometer.component.html',
   styleUrls: ['luxometer.component.css'],
-  providers: [ LightService, BluetoothCore ]
+  providers: [ LightService ]
 })
 export class LuxometerComponent implements OnInit {
 

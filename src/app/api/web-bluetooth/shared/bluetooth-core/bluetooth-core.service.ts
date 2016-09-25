@@ -20,10 +20,7 @@ import {
   BluetoothCharacteristicUUID
 }  from './types';
 
-export * from './types';
-
 const kBufferSize = 1;
-
 
 @Injectable()
 export class BluetoothCore extends ReplaySubject<any /* find a better interface type */> {
@@ -270,7 +267,7 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
    * @param  {ArrayBuffer}                       value          [description]
    * @return {Observable<DataView>}
    */
-  writeValue$(characteristic: BluetoothRemoteGATTCharacteristic, value: ArrayBuffer): Observable<{}> {
+  writeValue$(characteristic: BluetoothRemoteGATTCharacteristic, value: ArrayBuffer|Uint8Array): Observable<{}> {
     console.log('[BLE::Info] Writing Characteristic %o', characteristic);
 
     return this.toObservable(

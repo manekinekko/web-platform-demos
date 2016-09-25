@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'api-card',
   templateUrl: 'api-card.component.html',
   styleUrls: ['api-card.component.css']

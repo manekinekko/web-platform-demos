@@ -1,13 +1,11 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { BatteryLevelService } from './battery-level.service';
-import { BluetoothCore } from '../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-battery-level',
   templateUrl: 'battery-level.component.html',
   styleUrls: ['battery-level.component.css'],
-  providers: [ BatteryLevelService, BluetoothCore ]
+  providers: [ BatteryLevelService ]
 })
 export class BatteryLevelComponent implements OnInit {
 

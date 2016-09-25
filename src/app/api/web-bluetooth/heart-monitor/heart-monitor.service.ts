@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/mergeMap';
 import {
   BluetoothCore,
   BluetoothRemoteGATTServer,
@@ -46,7 +47,7 @@ export class HeartMonitorService {
     console.log('Getting Heart Monitor Service: %s', HeartMonitorService.GATT_CHARACTERISCTICS[0]);
 
     return this._setupGATTConnection(HeartMonitorService.GATT_CHARACTERISCTICS[0])
-        .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
+        .mergeMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
         .map( (value: DataView, index: number) => value.getUint8(0) )
 
   }
@@ -55,7 +56,7 @@ export class HeartMonitorService {
     console.log('Getting Heart Monitor Service: %s', HeartMonitorService.GATT_CHARACTERISCTICS[1]);
 
     return this._setupGATTConnection(HeartMonitorService.GATT_CHARACTERISCTICS[1])
-        .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
+        .mergeMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
         .map( (value: DataView, index: number) => {
           let sensorLocation = value.getUint8(0);
           let location = 'Unknown';
@@ -78,8 +79,8 @@ export class HeartMonitorService {
        .discover$({
          optionalServices: [HeartMonitorService.GATT_PRIMARY_SERVICE]
        })
-       .flatMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, HeartMonitorService.GATT_PRIMARY_SERVICE) )
-       .flatMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, characteristic) );
+       .mergeMap( (gatt: BluetoothRemoteGATTServer)  => this._core.getPrimaryService$(gatt, HeartMonitorService.GATT_PRIMARY_SERVICE) )
+       .mergeMap( (primaryService: BluetoothRemoteGATTService) => this._core.getCharacteristic$(primaryService, characteristic) );
  }
 
 }

@@ -9,7 +9,7 @@
       <p>{{ feature.description }}</p>
    </md-card-content>
    <md-card-actions>
-      <a *ngIf="feature.enable" [routerLink]="['/feature', feature.slug]" md-button>Launch Demo</a>
+      <a *ngIf="feature.enable" [routerLink]="['/api', feature.slug]" md-button>Launch Demo</a>
       <i md-button *ngIf="!feature.enable">Demo coming soon</i>
    </md-card-actions>
 </md-card>
