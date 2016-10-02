@@ -1,122 +1,12 @@
 [
   {
-    "name": "MdModule",
-    "file": "app/core/md.module.ts",
-    "providers": [],
-    "declarations": [],
-    "imports": [
-      {}
-    ],
-    "exports": [
-      {}
-    ],
-    "bootstrap": [],
-    "__raw": [
-      {
-        "pos": 694,
-        "end": 747,
-        "flags": 0,
-        "kind": 253,
-        "name": {
-          "pos": 694,
-          "end": 704,
-          "flags": 0,
-          "text": "imports"
-        },
-        "initializer": {
-          "pos": 705,
-          "end": 747,
-          "flags": 0,
-          "kind": 170,
-          "multiLine": true,
-          "elements": [
-            {
-              "pos": 707,
-              "end": 743,
-              "flags": 0,
-              "kind": 191,
-              "expression": {
-                "pos": 715,
-                "end": 743,
-                "flags": 0,
-                "kind": 174,
-                "expression": {
-                  "pos": 715,
-                  "end": 729,
-                  "flags": 0,
-                  "kind": 172,
-                  "expression": {
-                    "pos": 715,
-                    "end": 725,
-                    "flags": 0,
-                    "text": "MD_MODULES"
-                  },
-                  "name": {
-                    "pos": 726,
-                    "end": 729,
-                    "flags": 0,
-                    "text": "map"
-                  }
-                },
-                "arguments": [
-                  {
-                    "pos": 730,
-                    "end": 742,
-                    "flags": 0,
-                    "text": "mapProviders"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "pos": 748,
-        "end": 783,
-        "flags": 0,
-        "kind": 253,
-        "name": {
-          "pos": 748,
-          "end": 758,
-          "flags": 0,
-          "text": "exports"
-        },
-        "initializer": {
-          "pos": 759,
-          "end": 783,
-          "flags": 0,
-          "kind": 170,
-          "multiLine": true,
-          "elements": [
-            {
-              "pos": 761,
-              "end": 779,
-              "flags": 0,
-              "kind": 191,
-              "expression": {
-                "pos": 769,
-                "end": 779,
-                "flags": 0,
-                "text": "MD_MODULES"
-              }
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "name": "CoreModule",
     "file": "app/core/core.module.ts",
     "providers": [],
     "declarations": [],
     "imports": [
       {
-        "name": "BrowserModule"
-      },
-      {
-        "name": "undefined*"
+        "name": "CommonModule"
       },
       {
         "name": "MdModule"
@@ -124,7 +14,7 @@
     ],
     "exports": [
       {
-        "name": "BrowserModule"
+        "name": "CommonModule"
       },
       {
         "name": "RouterModule"
@@ -137,7 +27,7 @@
     "__raw": [
       {
         "pos": 278,
-        "end": 357,
+        "end": 326,
         "flags": 0,
         "kind": 253,
         "name": {
@@ -148,45 +38,20 @@
         },
         "initializer": {
           "pos": 289,
-          "end": 357,
+          "end": 326,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
               "pos": 291,
-              "end": 309,
+              "end": 308,
               "flags": 0,
-              "text": "BrowserModule"
+              "text": "CommonModule"
             },
             {
-              "pos": 310,
-              "end": 339,
-              "flags": 0,
-              "kind": 174,
-              "expression": {
-                "pos": 310,
-                "end": 335,
-                "flags": 0,
-                "kind": 172,
-                "expression": {
-                  "pos": 310,
-                  "end": 327,
-                  "flags": 0,
-                  "text": "RouterModule"
-                },
-                "name": {
-                  "pos": 328,
-                  "end": 335,
-                  "flags": 0,
-                  "text": "forRoot"
-                }
-              },
-              "arguments": []
-            },
-            {
-              "pos": 340,
-              "end": 353,
+              "pos": 309,
+              "end": 322,
               "flags": 0,
               "text": "MdModule"
             }
@@ -194,38 +59,38 @@
         }
       },
       {
-        "pos": 358,
-        "end": 425,
+        "pos": 327,
+        "end": 393,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 358,
-          "end": 368,
+          "pos": 327,
+          "end": 337,
           "flags": 0,
           "text": "exports"
         },
         "initializer": {
-          "pos": 369,
-          "end": 425,
+          "pos": 338,
+          "end": 393,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 371,
-              "end": 389,
+              "pos": 340,
+              "end": 357,
               "flags": 0,
-              "text": "BrowserModule"
+              "text": "CommonModule"
             },
             {
-              "pos": 390,
-              "end": 407,
+              "pos": 358,
+              "end": 375,
               "flags": 0,
               "text": "RouterModule"
             },
             {
-              "pos": 408,
-              "end": 421,
+              "pos": 376,
+              "end": 389,
               "flags": 0,
               "text": "MdModule"
             }
@@ -239,6 +104,81 @@
     "file": "app/shared/shared.module.ts",
     "providers": [],
     "declarations": [
+      {
+        "name": "TimeseriesChartComponent",
+        "file": "shared/timeseries-chart/timeseries-chart.component.ts",
+        "selector": "timeseries-chart",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 263,
+            "end": 294,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 263,
+              "end": 274,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "pos": 275,
+              "end": 294,
+              "flags": 0,
+              "kind": 9,
+              "text": "timeseries-chart"
+            }
+          },
+          {
+            "pos": 295,
+            "end": 362,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 295,
+              "end": 306,
+              "flags": 0,
+              "text": "template"
+            },
+            "initializer": {
+              "pos": 307,
+              "end": 362,
+              "flags": 0,
+              "kind": 9,
+              "text": "<canvas #chartRef width=\"800\" height=\"150\"></canvas>"
+            }
+          },
+          {
+            "pos": 363,
+            "end": 588,
+            "flags": 0,
+            "kind": 253,
+            "name": {
+              "pos": 363,
+              "end": 372,
+              "flags": 0,
+              "text": "styles"
+            },
+            "initializer": {
+              "pos": 373,
+              "end": 588,
+              "flags": 0,
+              "kind": 170,
+              "elements": [
+                {
+                  "pos": 375,
+                  "end": 587,
+                  "flags": 0,
+                  "kind": 11,
+                  "text": "\n    :host { display: block; }\n    @media (min-width: 800px) { canvas { width: 800px; } }\n    @media (min-width: 600px) { canvas { width: 500px; } }\n    @media (min-width: 400px) { canvas { width: 300px; } }\n  "
+                }
+              ]
+            }
+          }
+        ]
+      },
       {
         "name": "HomeComponent",
         "file": "shared/home/home.component.ts",
@@ -400,7 +340,10 @@
     ],
     "imports": [
       {
-        "name": "CoreModule"
+        "name": "MdModule"
+      },
+      {
+        "name": "CommonModule"
       },
       {
         "name": "SharedRoutesModule"
@@ -408,38 +351,53 @@
     ],
     "exports": [
       {
+        "name": "MdModule"
+      },
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "TimeseriesChartComponent"
+      },
+      {
         "name": "ApiCardComponent"
       }
     ],
     "bootstrap": [],
     "__raw": [
       {
-        "pos": 352,
-        "end": 408,
+        "pos": 415,
+        "end": 487,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 352,
-          "end": 362,
+          "pos": 415,
+          "end": 425,
           "flags": 0,
           "text": "imports"
         },
         "initializer": {
-          "pos": 363,
-          "end": 408,
+          "pos": 426,
+          "end": 487,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 365,
-              "end": 380,
+              "pos": 428,
+              "end": 441,
               "flags": 0,
-              "text": "CoreModule"
+              "text": "MdModule"
             },
             {
-              "pos": 381,
-              "end": 404,
+              "pos": 442,
+              "end": 459,
+              "flags": 0,
+              "text": "CommonModule"
+            },
+            {
+              "pos": 460,
+              "end": 483,
               "flags": 0,
               "text": "SharedRoutesModule"
             }
@@ -447,32 +405,38 @@
         }
       },
       {
-        "pos": 409,
-        "end": 471,
+        "pos": 488,
+        "end": 580,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 409,
-          "end": 424,
+          "pos": 488,
+          "end": 503,
           "flags": 0,
           "text": "declarations"
         },
         "initializer": {
-          "pos": 425,
-          "end": 471,
+          "pos": 504,
+          "end": 580,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 427,
-              "end": 445,
+              "pos": 506,
+              "end": 535,
+              "flags": 0,
+              "text": "TimeseriesChartComponent"
+            },
+            {
+              "pos": 536,
+              "end": 554,
               "flags": 0,
               "text": "HomeComponent"
             },
             {
-              "pos": 446,
-              "end": 467,
+              "pos": 555,
+              "end": 576,
               "flags": 0,
               "text": "ApiCardComponent"
             }
@@ -480,26 +444,44 @@
         }
       },
       {
-        "pos": 472,
-        "end": 510,
+        "pos": 581,
+        "end": 681,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 472,
-          "end": 482,
+          "pos": 581,
+          "end": 591,
           "flags": 0,
           "text": "exports"
         },
         "initializer": {
-          "pos": 483,
-          "end": 510,
+          "pos": 592,
+          "end": 681,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 485,
-              "end": 506,
+              "pos": 594,
+              "end": 607,
+              "flags": 0,
+              "text": "MdModule"
+            },
+            {
+              "pos": 608,
+              "end": 625,
+              "flags": 0,
+              "text": "CommonModule"
+            },
+            {
+              "pos": 626,
+              "end": 655,
+              "flags": 0,
+              "text": "TimeseriesChartComponent"
+            },
+            {
+              "pos": 656,
+              "end": 677,
               "flags": 0,
               "text": "ApiCardComponent"
             }
@@ -513,7 +495,7 @@
     "file": "api/web-bluetooth/web-bluetooth.module.ts",
     "providers": [
       {
-        "name": "BluetoothCore"
+        "name": "BrowserWebBluetooth"
       }
     ],
     "declarations": [
@@ -603,6 +585,9 @@
         "providers": [
           {
             "name": "BatteryLevelService"
+          },
+          {
+            "name": "BluetoothCore"
           }
         ],
         "templateUrl": [
@@ -613,63 +598,63 @@
         ],
         "__raw": [
           {
-            "pos": 135,
-            "end": 167,
+            "pos": 179,
+            "end": 211,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 135,
-              "end": 146,
+              "pos": 179,
+              "end": 190,
               "flags": 0,
               "text": "selector"
             },
             "initializer": {
-              "pos": 147,
-              "end": 167,
+              "pos": 191,
+              "end": 211,
               "flags": 0,
               "kind": 9,
               "text": "app-battery-level"
             }
           },
           {
-            "pos": 168,
-            "end": 214,
+            "pos": 212,
+            "end": 258,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 168,
-              "end": 182,
+              "pos": 212,
+              "end": 226,
               "flags": 0,
               "text": "templateUrl"
             },
             "initializer": {
-              "pos": 183,
-              "end": 214,
+              "pos": 227,
+              "end": 258,
               "flags": 0,
               "kind": 9,
               "text": "battery-level.component.html"
             }
           },
           {
-            "pos": 215,
-            "end": 260,
+            "pos": 259,
+            "end": 304,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 215,
-              "end": 227,
+              "pos": 259,
+              "end": 271,
               "flags": 0,
               "text": "styleUrls"
             },
             "initializer": {
-              "pos": 228,
-              "end": 260,
+              "pos": 272,
+              "end": 304,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 230,
-                  "end": 259,
+                  "pos": 274,
+                  "end": 303,
                   "flags": 0,
                   "kind": 9,
                   "text": "battery-level.component.css"
@@ -678,27 +663,33 @@
             }
           },
           {
-            "pos": 261,
-            "end": 298,
+            "pos": 305,
+            "end": 357,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 261,
-              "end": 273,
+              "pos": 305,
+              "end": 317,
               "flags": 0,
               "text": "providers"
             },
             "initializer": {
-              "pos": 274,
-              "end": 298,
+              "pos": 318,
+              "end": 357,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 276,
-                  "end": 296,
+                  "pos": 320,
+                  "end": 340,
                   "flags": 0,
                   "text": "BatteryLevelService"
+                },
+                {
+                  "pos": 341,
+                  "end": 355,
+                  "flags": 0,
+                  "text": "BluetoothCore"
                 }
               ]
             }
@@ -712,6 +703,9 @@
         "providers": [
           {
             "name": "HeartMonitorService"
+          },
+          {
+            "name": "BluetoothCore"
           }
         ],
         "templateUrl": [
@@ -722,63 +716,63 @@
         ],
         "__raw": [
           {
-            "pos": 135,
-            "end": 167,
+            "pos": 179,
+            "end": 211,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 135,
-              "end": 146,
+              "pos": 179,
+              "end": 190,
               "flags": 0,
               "text": "selector"
             },
             "initializer": {
-              "pos": 147,
-              "end": 167,
+              "pos": 191,
+              "end": 211,
               "flags": 0,
               "kind": 9,
               "text": "app-heart-monitor"
             }
           },
           {
-            "pos": 168,
-            "end": 214,
+            "pos": 212,
+            "end": 258,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 168,
-              "end": 182,
+              "pos": 212,
+              "end": 226,
               "flags": 0,
               "text": "templateUrl"
             },
             "initializer": {
-              "pos": 183,
-              "end": 214,
+              "pos": 227,
+              "end": 258,
               "flags": 0,
               "kind": 9,
               "text": "heart-monitor.component.html"
             }
           },
           {
-            "pos": 215,
-            "end": 260,
+            "pos": 259,
+            "end": 304,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 215,
-              "end": 227,
+              "pos": 259,
+              "end": 271,
               "flags": 0,
               "text": "styleUrls"
             },
             "initializer": {
-              "pos": 228,
-              "end": 260,
+              "pos": 272,
+              "end": 304,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 230,
-                  "end": 259,
+                  "pos": 274,
+                  "end": 303,
                   "flags": 0,
                   "kind": 9,
                   "text": "heart-monitor.component.css"
@@ -787,27 +781,33 @@
             }
           },
           {
-            "pos": 261,
-            "end": 298,
+            "pos": 305,
+            "end": 357,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 261,
-              "end": 273,
+              "pos": 305,
+              "end": 317,
               "flags": 0,
               "text": "providers"
             },
             "initializer": {
-              "pos": 274,
-              "end": 298,
+              "pos": 318,
+              "end": 357,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 276,
-                  "end": 296,
+                  "pos": 320,
+                  "end": 340,
                   "flags": 0,
                   "text": "HeartMonitorService"
+                },
+                {
+                  "pos": 341,
+                  "end": 355,
+                  "flags": 0,
+                  "text": "BluetoothCore"
                 }
               ]
             }
@@ -821,6 +821,9 @@
         "providers": [
           {
             "name": "LightService"
+          },
+          {
+            "name": "BluetoothCore"
           }
         ],
         "templateUrl": [
@@ -831,63 +834,63 @@
         ],
         "__raw": [
           {
-            "pos": 116,
-            "end": 144,
+            "pos": 160,
+            "end": 188,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 116,
-              "end": 127,
+              "pos": 160,
+              "end": 171,
               "flags": 0,
               "text": "selector"
             },
             "initializer": {
-              "pos": 128,
-              "end": 144,
+              "pos": 172,
+              "end": 188,
               "flags": 0,
               "kind": 9,
               "text": "app-luxometer"
             }
           },
           {
-            "pos": 145,
-            "end": 187,
+            "pos": 189,
+            "end": 231,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 145,
-              "end": 159,
+              "pos": 189,
+              "end": 203,
               "flags": 0,
               "text": "templateUrl"
             },
             "initializer": {
-              "pos": 160,
-              "end": 187,
+              "pos": 204,
+              "end": 231,
               "flags": 0,
               "kind": 9,
               "text": "luxometer.component.html"
             }
           },
           {
-            "pos": 188,
-            "end": 229,
+            "pos": 232,
+            "end": 273,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 188,
-              "end": 200,
+              "pos": 232,
+              "end": 244,
               "flags": 0,
               "text": "styleUrls"
             },
             "initializer": {
-              "pos": 201,
-              "end": 229,
+              "pos": 245,
+              "end": 273,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 203,
-                  "end": 228,
+                  "pos": 247,
+                  "end": 272,
                   "flags": 0,
                   "kind": 9,
                   "text": "luxometer.component.css"
@@ -896,27 +899,33 @@
             }
           },
           {
-            "pos": 230,
-            "end": 260,
+            "pos": 274,
+            "end": 319,
             "flags": 0,
             "kind": 253,
             "name": {
-              "pos": 230,
-              "end": 242,
+              "pos": 274,
+              "end": 286,
               "flags": 0,
               "text": "providers"
             },
             "initializer": {
-              "pos": 243,
-              "end": 260,
+              "pos": 287,
+              "end": 319,
               "flags": 0,
               "kind": 170,
               "elements": [
                 {
-                  "pos": 245,
-                  "end": 258,
+                  "pos": 289,
+                  "end": 302,
                   "flags": 0,
                   "text": "LightService"
+                },
+                {
+                  "pos": 303,
+                  "end": 317,
+                  "flags": 0,
+                  "text": "BluetoothCore"
                 }
               ]
             }
@@ -933,89 +942,98 @@
       },
       {
         "name": "SharedModule"
+      },
+      {
+        "name": "WebBleRoutesModule"
       }
     ],
     "exports": [],
     "bootstrap": [],
     "__raw": [
       {
-        "pos": 437,
-        "end": 489,
+        "pos": 520,
+        "end": 596,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 437,
-          "end": 447,
+          "pos": 520,
+          "end": 530,
           "flags": 0,
           "text": "imports"
         },
         "initializer": {
-          "pos": 448,
-          "end": 489,
+          "pos": 531,
+          "end": 596,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 450,
-              "end": 467,
+              "pos": 533,
+              "end": 550,
               "flags": 0,
               "text": "CommonModule"
             },
             {
-              "pos": 468,
-              "end": 485,
+              "pos": 551,
+              "end": 568,
               "flags": 0,
               "text": "SharedModule"
+            },
+            {
+              "pos": 569,
+              "end": 592,
+              "flags": 0,
+              "text": "WebBleRoutesModule"
             }
           ]
         }
       },
       {
-        "pos": 490,
-        "end": 630,
+        "pos": 597,
+        "end": 737,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 490,
-          "end": 505,
+          "pos": 597,
+          "end": 612,
           "flags": 0,
           "text": "declarations"
         },
         "initializer": {
-          "pos": 506,
-          "end": 630,
+          "pos": 613,
+          "end": 737,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 508,
-              "end": 534,
+              "pos": 615,
+              "end": 641,
               "flags": 0,
               "text": "WebBluetoothComponent"
             },
             {
-              "pos": 535,
-              "end": 561,
+              "pos": 642,
+              "end": 668,
               "flags": 0,
               "text": "BatteryLevelComponent"
             },
             {
-              "pos": 562,
-              "end": 588,
+              "pos": 669,
+              "end": 695,
               "flags": 0,
               "text": "HeartMonitorComponent"
             },
             {
-              "pos": 589,
-              "end": 612,
+              "pos": 696,
+              "end": 719,
               "flags": 0,
               "text": "LuxometerComponent"
             },
             {
-              "pos": 613,
-              "end": 626,
+              "pos": 720,
+              "end": 733,
               "flags": 0,
               "text": "UnitPipe"
             }
@@ -1023,28 +1041,28 @@
         }
       },
       {
-        "pos": 631,
-        "end": 668,
+        "pos": 738,
+        "end": 781,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 631,
-          "end": 643,
+          "pos": 738,
+          "end": 750,
           "flags": 0,
           "text": "providers"
         },
         "initializer": {
-          "pos": 644,
-          "end": 668,
+          "pos": 751,
+          "end": 781,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 646,
-              "end": 664,
+              "pos": 753,
+              "end": 777,
               "flags": 0,
-              "text": "BluetoothCore"
+              "text": "BrowserWebBluetooth"
             }
           ]
         }
@@ -1192,10 +1210,16 @@
         "name": "CoreModule"
       },
       {
+        "name": "BrowserModule"
+      },
+      {
         "name": "SharedModule"
       },
       {
         "name": "ApiModule"
+      },
+      {
+        "name": "AppRoutesModule"
       }
     ],
     "exports": [],
@@ -1206,65 +1230,77 @@
     ],
     "__raw": [
       {
-        "pos": 273,
-        "end": 338,
+        "pos": 332,
+        "end": 437,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 273,
-          "end": 283,
+          "pos": 332,
+          "end": 342,
           "flags": 0,
           "text": "imports"
         },
         "initializer": {
-          "pos": 284,
-          "end": 338,
+          "pos": 343,
+          "end": 437,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 286,
-              "end": 301,
+              "pos": 345,
+              "end": 360,
               "flags": 0,
               "text": "CoreModule"
             },
             {
-              "pos": 302,
-              "end": 319,
+              "pos": 361,
+              "end": 379,
+              "flags": 0,
+              "text": "BrowserModule"
+            },
+            {
+              "pos": 380,
+              "end": 397,
               "flags": 0,
               "text": "SharedModule"
             },
             {
-              "pos": 320,
-              "end": 334,
+              "pos": 398,
+              "end": 412,
               "flags": 0,
               "text": "ApiModule"
+            },
+            {
+              "pos": 413,
+              "end": 433,
+              "flags": 0,
+              "text": "AppRoutesModule"
             }
           ]
         }
       },
       {
-        "pos": 339,
-        "end": 378,
+        "pos": 438,
+        "end": 477,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 339,
-          "end": 354,
+          "pos": 438,
+          "end": 453,
           "flags": 0,
           "text": "declarations"
         },
         "initializer": {
-          "pos": 355,
-          "end": 378,
+          "pos": 454,
+          "end": 477,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 357,
-              "end": 374,
+              "pos": 456,
+              "end": 473,
               "flags": 0,
               "text": "AppComponent"
             }
@@ -1272,26 +1308,26 @@
         }
       },
       {
-        "pos": 379,
-        "end": 415,
+        "pos": 478,
+        "end": 514,
         "flags": 0,
         "kind": 253,
         "name": {
-          "pos": 379,
-          "end": 391,
+          "pos": 478,
+          "end": 490,
           "flags": 0,
           "text": "bootstrap"
         },
         "initializer": {
-          "pos": 392,
-          "end": 415,
+          "pos": 491,
+          "end": 514,
           "flags": 0,
           "kind": 170,
           "multiLine": true,
           "elements": [
             {
-              "pos": 394,
-              "end": 411,
+              "pos": 493,
+              "end": 510,
               "flags": 0,
               "text": "AppComponent"
             }
