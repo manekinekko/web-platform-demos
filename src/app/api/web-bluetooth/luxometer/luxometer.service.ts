@@ -28,13 +28,13 @@ export class LightService {
 
   streamValues() {
     return this._core.streamValues$()
-      .map( (value: DataView) => value.getUint8(0) );
+      .map( this.mappedValue.bind(this) );
   }
 
-  getLightLevel(): Observable<number> {
-   console.log('Getting Light Service...');
+  getValue(): Observable<number|string> {
+    console.log('Getting Light Service...');
 
-   return this._core
+    return this._core
 
        .discover$({
          filters: [{
@@ -70,8 +70,22 @@ export class LightService {
        // - readValue_64$(): number
        .flatMap( (characteristic: BluetoothRemoteGATTCharacteristic) =>  this._core.readValue$(characteristic) )
 
-       .map( (value: DataView) => value.getUint8(0) )
+       .map( this.mappedValue.bind(this) )
 
+ }
+
+ mappedValue(data: DataView): number {
+    let value = this._core.littleEndianToUint16(data, 0);
+
+    // Extraction of pressure value, based on sfloatExp2ToDouble from
+    // BLEUtility.m in Texas Instruments TI BLE SensorTag iOS app
+    // source code.
+    let mantissa = value & 0x0FFF;
+    let exponent = value >> 12;
+    let magnitude = Math.pow(2, exponent);
+    let output = (mantissa * magnitude);
+    let lux = output / 100.0;
+    return +lux.toFixed(2);
  }
 
 }

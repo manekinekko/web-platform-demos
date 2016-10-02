@@ -286,6 +286,25 @@ export class BluetoothCore extends ReplaySubject<any /* find a better interface 
   }
 
   /**
+   * @param  {DataView} data   [description]
+   * @param  {number}   offset [description]
+   * @return {number}          [description]
+   */
+  littleEndianToUint16(data: any, offset: number): number {
+    return (this.littleEndianToUint8(data, offset + 1) << 8)
+            + this.littleEndianToUint8(data, offset);
+  }
+
+  /**
+   * @param  {DataView} data   [description]
+   * @param  {number}   offset [description]
+   * @return {number}          [description]
+   */
+  littleEndianToUint8(data: any, offset: number): number {
+    return data.getUint8(offset);
+  }
+
+  /**
    * Sends random data (for testing purpose only).
    * @return {Observable<number>}
    */

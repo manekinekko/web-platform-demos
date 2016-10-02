@@ -7,6 +7,8 @@ import { WebBluetoothComponent }  from './web-bluetooth.component';
 import { BatteryLevelComponent } from './battery-level/';
 import { HeartMonitorComponent } from './heart-monitor/';
 import { LuxometerComponent } from './luxometer/';
+import { TemperatureComponent } from './temperature/';
+
 import { UnitPipe, BluetoothCore, BrowserWebBluetooth } from './shared';
 
 import { SharedModule } from '../../shared/';
@@ -22,7 +24,8 @@ import { SharedModule } from '../../shared/';
     BatteryLevelComponent,
     HeartMonitorComponent,
     LuxometerComponent,
-    UnitPipe
+    UnitPipe,
+    TemperatureComponent
   ],
   providers: [
     BrowserWebBluetooth

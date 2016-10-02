@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { LightService } from './luxometer.service';
+import { TemperatureService } from './temperature.service';
 import { BluetoothCore } from '../shared/';
 
 @Component({
-  selector: 'app-luxometer',
-  templateUrl: 'luxometer.component.html',
-  styleUrls: ['luxometer.component.css'],
-  providers: [ LightService, BluetoothCore ]
+  selector: 'app-temperature',
+  templateUrl: './temperature.component.html',
+  styleUrls: ['./temperature.component.css'],
+  providers: [ TemperatureService, BluetoothCore ]
 })
-export class LuxometerComponent implements OnInit {
+export class TemperatureComponent implements OnInit {
 
   value: string|number = '--';
   device: any = {};
 
   constructor(
-    private _service: LightService
+    private _service: TemperatureService
   ) { }
 
   ngOnInit() {
@@ -56,6 +56,5 @@ export class LuxometerComponent implements OnInit {
   getFakeValue() {
     this._service.getFakeValue();
   }
-
 
 }

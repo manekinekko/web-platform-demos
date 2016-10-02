@@ -10,8 +10,8 @@ import { BluetoothCore } from '../shared/';
 })
 export class HeartMonitorComponent implements OnInit {
 
-  heartRate: string = 'N/A';
-  bodySensor: string = 'N/A';
+  heartRate: string = '--';
+  bodySensor: string = '--';
   device: any = {};
 
   constructor(
@@ -38,7 +38,7 @@ export class HeartMonitorComponent implements OnInit {
         else {
           // device not connected or disconnected
           this.device = null;
-          this.heartRate = 'N/A';
+          this.heartRate = '--';
         }
       }
     );

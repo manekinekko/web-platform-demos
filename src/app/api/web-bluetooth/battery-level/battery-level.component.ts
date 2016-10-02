@@ -10,7 +10,7 @@ import { BluetoothCore } from '../shared/';
 })
 export class BatteryLevelComponent implements OnInit {
 
-    batteryLevel: string = 'N/A';
+    batteryLevel: string = '--';
     device: any = {};
 
     constructor(
@@ -37,7 +37,7 @@ export class BatteryLevelComponent implements OnInit {
           else {
             // device not connected or disconnected
             this.device = null;
-            this.batteryLevel = 'N/A';
+            this.batteryLevel = '--';
           }
         }
       );

@@ -1,13 +1,13 @@
 <api-card logo="assets/images/ble.png" theme="theme-ble" [device]="device">
 
-  <header>Luxometer</header>
+  <header>Temperature</header>
 
   <section>
-    <span [innerHTML]="value | unit:'lux'" ></span>
+    <span [innerHTML]="value | unit:'°C'" ></span>
     <timeseries-chart [value]="value" [disabled]="!device"></timeseries-chart>
   </section>
 
-  <button md-button (click)="getValue()">Get Light Level</button>
+  <button md-button (click)="getValue()">Get Temperature</button>
   <button md-button *ngIf="device?.name" (click)="getFakeValue()">Test (UI)</button>
 
 </api-card>
