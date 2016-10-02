@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { CoreModule }  from './core/';
 import { SharedModule }  from './shared/';
@@ -10,8 +11,10 @@ import { AppRoutesModule }  from './app.routes';
 @NgModule({
   imports: [
     CoreModule,
+    BrowserModule,
     SharedModule,
-    ApiModule
+    ApiModule,
+    AppRoutesModule
   ],
   declarations: [
     AppComponent

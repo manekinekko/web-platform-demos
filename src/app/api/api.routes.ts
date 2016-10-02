@@ -6,4 +6,4 @@ export const routes: Routes = [
   ]}
 ];
 
-export const ApiRoutesModule = RouterModule.forChild(routes);
+export const ApiRoutesModule = RouterModule.forRoot(routes, {useHash: true, enableTracing: false});

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { LightService } from './luxometer.service';
+import { BluetoothCore } from '../shared/';
 
 @Component({
   selector: 'app-luxometer',
   templateUrl: 'luxometer.component.html',
   styleUrls: ['luxometer.component.css'],
-  providers: [ LightService ]
+  providers: [ LightService, BluetoothCore ]
 })
 export class LuxometerComponent implements OnInit {
 
@@ -50,10 +51,7 @@ export class LuxometerComponent implements OnInit {
 
   getLightLevel() {
     return this._lightService.getLightLevel().subscribe(
-      (value) => {
-        console.log(value);
-        this.light = value
-      },
+      (value) => this.light = value,
       (error) => console.error(error)
     );
   }

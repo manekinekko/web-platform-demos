@@ -1,9 +1,10 @@
-<api-card logo="images/ble.png" theme="theme-ble" [device]="device">
+<api-card logo="assets/images/ble.png" theme="theme-ble" [device]="device">
 
   <header>Luxometer</header>
 
   <section>
-    <span [innerHTML]="light | unit:'💡'" ></span>
+    <span [innerHTML]="light | unit:'lux'" ></span>
+    <timeseries-chart [value]="light" [disabled]="!device"></timeseries-chart>
   </section>
 
   <button md-button (click)="getLightLevel()">Get Light Level</button>

@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { WebBleRoutesModule } from './web-bluetooth.routes';
+
 import { WebBluetoothComponent }  from './web-bluetooth.component';
 import { BatteryLevelComponent } from './battery-level/';
 import { HeartMonitorComponent } from './heart-monitor/';
 import { LuxometerComponent } from './luxometer/';
-import { UnitPipe, BluetoothCore } from './shared';
+import { UnitPipe, BluetoothCore, BrowserWebBluetooth } from './shared';
 
 import { SharedModule } from '../../shared/';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    WebBleRoutesModule
   ],
   declarations: [
     WebBluetoothComponent,
@@ -22,7 +25,9 @@ import { SharedModule } from '../../shared/';
     UnitPipe
   ],
   providers: [
-    BluetoothCore
+    BrowserWebBluetooth
   ]
 })
-export class WebBleModule { }
+export class WebBleModule {
+
+}

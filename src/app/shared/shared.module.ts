@@ -4,20 +4,26 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutesModule }  from './shared.routes';
 import { HomeComponent }  from './home/';
+import { TimeseriesChartComponent } from './timeseries-chart/';
 import { ApiCardComponent }  from './api-card/';
 
-import { CoreModule } from '../core/';
+import { MdModule }  from '../core/';
 
 @NgModule({
   imports: [
-    CoreModule,
+    MdModule,
+    CommonModule,
     SharedRoutesModule
   ],
   declarations: [
+    TimeseriesChartComponent,
     HomeComponent,
     ApiCardComponent
   ],
   exports: [
+    MdModule,
+    CommonModule,
+    TimeseriesChartComponent,
     ApiCardComponent
   ]
 })

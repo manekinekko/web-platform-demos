@@ -13,4 +13,6 @@ interface ExtendedNavigator extends Navigator {
 
 interface ExtendedWindow extends Window {
   TextDecoder: any;
+  SmoothieChart: any;
+  TimeSeries: any;
 }

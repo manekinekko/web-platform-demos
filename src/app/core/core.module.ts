@@ -8,12 +8,11 @@ import { MdModule } from './md.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([]),
+    CommonModule,
     MdModule
   ],
   exports: [
-    BrowserModule,
+    CommonModule,
     RouterModule,
     MdModule
   ]
